@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+    <title>Parkbased</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensures footer stays at bottom */
+            margin: 0; /* Remove default margin */
+        }
+        main {
+            flex: 1; /* Takes up remaining space */
+            padding-bottom: 2rem; /* Ensure some space above the footer */
+        }
+        .video-background {
+            position: absolute; /* Ensure video is behind content */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Keep video behind other elements */
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop class="video-background">
+        <source src="parking_video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Header -->
+    <header class="d-flex justify-content-between align-items-center p-3" style="background-color: #2c3e50; color: white;">
+        <div class="logo">
+            <img src="parking_logo.png" alt="Logo" class="logo-img">
+        </div>
+        <nav class="d-flex">
+            <a href="#" class="nav-link text-white">
+                <i class="fas fa-car"></i> About
+            </a>
+            <a href="#" class="nav-link text-white">
+                <i class="fas fa-parking"></i> Features
+            </a>
+            <a href="#" class="nav-link text-white">
+                <i class="fas fa-phone-alt"></i> Contact Us
+            </a>
+        </nav>
+    </header>
+    
+    
+    
+    <!-- Main Section -->
+<main class="text-center mt-5" style="background: rgba(0, 0, 0, 0.8); padding: 2.5rem; border-radius: 15px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);">
+    <h1 class="text-white display-4" id="typing-effect" style="font-family: 'Poppins', sans-serif; letter-spacing: 2px; text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);">
+        Experience Parking Like Never Before
+    </h1>
+    <div class="text-white" style="text-align: center;">
+        <p style="font-family: 'Roboto', sans-serif; font-size: 1.2rem; margin: 1.5rem 0; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);">
+            Experience hassle-free parking with ParkBased. Our innovative platform allows you to find, reserve, and manage parking spots effortlessly.
+        </p>
+    </div>
+
+    <!-- Button Wrapper -->
+    <div class="mb-4" style="margin-top: 40px;">
+        <button class="btn btn-primary me-3" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
+        <button class="btn btn-light" data-toggle="modal" data-target="#signInModal">Sign In</button>
+    </div>
+</main>
+
+
+
+
+    <!-- Sign Up Modal -->
+<div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title" id="signUpModalLabel">Sign Up</h5>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body bg-light">
+                <form>
+                    <div class="form-group">
+                        <label for="fullName" class="text-dark">Full Name</label>
+                        <input type="text" class="form-control" id="fullName" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="signUpEmail" class="text-dark">Email address</label>
+                        <input type="email" class="form-control" id="signUpEmail" required placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="signUpPassword" class="text-dark">Password</label>
+                        <input type="password" class="form-control" id="signUpPassword" required placeholder="Create a password">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword" class="text-dark">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" required placeholder="Re-enter your password">
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                        <label class="form-check-label text-dark" for="termsCheck">I agree to the Terms & Conditions</label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-success mx-2" style="transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#27ae60'" onmouseout="this.style.backgroundColor='#2ecc71'">Sign Up</button>
+            </div>
+            <div class="social-signup text-center mb-2">
+                <p class="text-dark">Or sign up with:</p>
+                <button class="btn btn-danger btn-sm mx-1">
+                    <i class="fab fa-google"></i> Sign up with Google
+                </button>
+                <button class="btn btn-primary btn-sm mx-1">
+                    <i class="fab fa-facebook-f"></i> Sign up with Facebook
+                </button>
+            </div>                
+        </div>                    
+    </div>
+</div>
+
+
+    <!-- Sign In Modal -->
+<div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="signInModalLabel">Sign In</h5>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body bg-light">
+                <form>
+                    <div class="form-group">
+                        <label for="signInEmail" class="text-dark">Email address</label>
+                        <input type="email" class="form-control" id="signInEmail" required placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="signInPassword" class="text-dark">Password</label>
+                        <input type="password" class="form-control" id="signInPassword" required placeholder="Enter your password">
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                        <label class="form-check-label text-dark" for="rememberMe">Remember Me</label>
+                    </div>
+                    <a href="#" class="text-primary">Forgot Password?</a>
+                </form>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-primary mx-2" style="transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#2980b9'" onmouseout="this.style.backgroundColor='#3498db'">Sign In</button>
+            </div>
+            <div class="social-signin text-center mb-2">
+                <p class="text-dark">Or sign in with:</p>
+                <button class="btn btn-danger btn-sm mx-1">
+                    <i class="fab fa-google"></i> Sign in with Google
+                </button>
+                <button class="btn btn-primary btn-sm mx-1">
+                    <i class="fab fa-facebook-f"></i> Sign in with Facebook
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Footer -->
+    <footer class="text-center mt-5 p-4" style="background-color: black; color: white; width: 100%;">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <!-- Links Section -->
+                <div class="mb-3 mb-md-0">
+                    <a href="#" class="text-white me-3" aria-label="Privacy Policy">
+                        <i class="fas fa-shield-alt"></i> Privacy Policy
+                    </a>
+                    <span>|</span>
+                    <a href="#" class="text-white mx-3" aria-label="Terms of Service">
+                        <i class="fas fa-file-contract"></i> Terms of Service
+                    </a>
+                    <span>|</span>
+                    <a href="#" class="text-white ms-3" aria-label="FAQs">
+                        <i class="fas fa-question-circle"></i> FAQs
+                    </a>
+                </div>
+                
+                <!-- Social Media Section -->
+                <div class="mb-3 mb-md-0">
+                    <span>Follow us:</span>
+                    <a href="#" class="text-white ms-3" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-white ms-3" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-white ms-3" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+                
+                <!-- Contact Section -->
+                <div>
+                    <a href="mailto:ParkBase@gmail.com" class="text-white me-3" aria-label="Email">
+                        <i class="fas fa-envelope"></i> ParkBase@gmail.com
+                    </a>
+                    <span>|</span>
+                    <a href="tel:+639175813189" class="text-white ms-3" aria-label="Phone">
+                        <i class="fas fa-phone-alt"></i> (+63) 9456
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+       const text = "Find, reserve, and park with ease";
+
+        let index = 0;
+    
+        function typeText() {
+            if (index < text.length) {
+                document.getElementById("typing-effect").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeText, 50); // Adjust speed here (in milliseconds)
+            }
+        }
+    
+        window.onload = typeText; // Start typing effect on page load
+    </script>
+</body>
+</html>
